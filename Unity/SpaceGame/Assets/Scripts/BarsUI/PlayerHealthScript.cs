@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthScript : MonoBehaviour
 {
@@ -9,14 +10,14 @@ public class PlayerHealthScript : MonoBehaviour
 
     public HealthbarScript healthBar;
 
-    void Start()
+    public void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
     
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -28,24 +29,41 @@ public class PlayerHealthScript : MonoBehaviour
             healthBar.SetHealth(currentHealth);
         }
 
-        
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
     }
 
-    void IncreaseHealth(float increase)
+    //void IncreaseHealth(float increase)
+    //{
+    //    currentHealth += increase;
+    //    healthBar.SetHealth(currentHealth);
+    //
+    //    if(currentHealth > maxHealth)
+    //    {
+    //        currentHealth = maxHealth;
+    //    }
+    //}
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        currentHealth += increase;
-        healthBar.SetHealth(currentHealth);
-
-        if(currentHealth > maxHealth)
+        if (collision.gameObject.tag == "Afval")
         {
-            currentHealth = maxHealth;
+            TakeDamage(10);
         }
     }
+
+   // IEnumerator DamageWait()
+   // {
+   //     yield return new WaitForSeconds(10f);
+   //     TakeDamage(10);
+   // }
+
 }

@@ -11,7 +11,7 @@ public class PlayerEngineScript : MonoBehaviour
 
     void Start()
     {
-        currentHeat = 0;
+        currentHeat = maxHeat;
         engineBar.SetMaxHeat(maxHeat);
     }
 
@@ -22,11 +22,22 @@ public class PlayerEngineScript : MonoBehaviour
         {
             HighHeat(20);
         }
+        else if (currentHeat < maxHeat)
+        {
+            currentHeat += 6f * Time.deltaTime;
+            engineBar.SetHeat(currentHeat);
+        }
+
+        else if (currentHeat <= 0)
+        {
+            currentHeat += 4f * Time.deltaTime;
+            engineBar.SetHeat(currentHeat);
+        }
     }
 
     void HighHeat(float heatDamage)
     {
-        currentHeat += heatDamage;
+        currentHeat -= heatDamage;
 
         engineBar.SetHeat(currentHeat);
     }

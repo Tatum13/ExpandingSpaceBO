@@ -22,18 +22,25 @@ public class PauseMenuScript : MonoBehaviour
                 Pause();
             }
         }
+
+       // if (Input.GetKeyDown(KeyCode.Escape))
+       // {
+       //     if()
+       // }
     }
 
     public void Resume()
     {
-        pausemenuUI.SetActive(true);
+        pausemenuUI.SetActive(false);
         gameIsPaused = false;
+        Time.timeScale = 1;
     }
 
     void Pause()
     {
         pausemenuUI.SetActive(true);
         gameIsPaused = true;
+        Time.timeScale = 0;
     }
 
     public void PauseToMainMenu()
@@ -43,7 +50,6 @@ public class PauseMenuScript : MonoBehaviour
 
     public void PauseToQuit()
     {
-        Debug.Log("quit from pausescreen");
-        Application.Quit();
+        Application.Quit(); //WERKT!!
     }
 }

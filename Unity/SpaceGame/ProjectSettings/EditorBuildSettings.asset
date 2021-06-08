@@ -11,4 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Space.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/DeathMenu.unity
+    guid: fc05ee77a05c14a4dbf508ba43f0e171
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 297ac1d7eb3077a4f92de5af405e9032
+  - enabled: 1
+    path: Assets/Scenes/InsideShip.unity
+    guid: 1595499a253ac27498c777ee8fd6b980
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 89f54f53b4d61ae498950a2fd4e82727, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 970a3672e05747449982a1ca42b1dad5, type: 2}
