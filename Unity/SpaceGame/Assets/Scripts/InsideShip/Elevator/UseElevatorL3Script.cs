@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UseElevatorL3Script : MonoBehaviour
 {
@@ -62,6 +64,7 @@ public class UseElevatorL3Script : MonoBehaviour
         // Moving down one leven when pressing DownArrow
         if (Input.GetKeyDown(KeyCode.DownArrow) && eliasInElevator)
         {
+            SceneManager.LoadScene(5);
             GameObject.Find("Elias").transform.position = new Vector2(3.18f, 4.58f);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && kaylaInElevator)

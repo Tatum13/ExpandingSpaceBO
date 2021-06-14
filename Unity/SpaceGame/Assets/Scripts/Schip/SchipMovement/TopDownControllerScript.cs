@@ -43,8 +43,8 @@ public class TopDownControllerScript : MonoBehaviour
         else shipRigidbody2D.drag = 0;
 
         //Limit so we cannot go faster than the max speed in the "forward" direction
-        if (velocityVsUp > maxSpeed && accelerationInput > 0)
-            return;
+        /*if (velocityVsUp > maxSpeed && accelerationInput > 0)
+            return;*/
 
         //Limit so we cannot go faster than the 50% of max speed in the "reverse" direction
         if (velocityVsUp < -maxSpeed*0.5f && accelerationInput < 0)
@@ -52,7 +52,7 @@ public class TopDownControllerScript : MonoBehaviour
 
         //Limit so we cannot go faster in any direction while accelerating
         if (shipRigidbody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
-            return;
+            shipRigidbody2D.drag = Mathf.Lerp(shipRigidbody2D.drag, 5f, 1);
 
         //Create a force for the engine
         Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
@@ -68,13 +68,6 @@ public class TopDownControllerScript : MonoBehaviour
 
         //Apply steering by rotating the ship object
         shipRigidbody2D.MoveRotation(rotationAngle);
-    }
-
-
-    float GetLateralVelocity()
-    {
-        //Returns how how fast the ship is moving sideways. 
-        return Vector2.Dot(transform.right, shipRigidbody2D.velocity);
     }
 
 
