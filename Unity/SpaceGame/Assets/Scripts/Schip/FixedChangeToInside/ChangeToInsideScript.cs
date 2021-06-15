@@ -16,7 +16,7 @@ public class ChangeToInsideScript : MonoBehaviour
         environment = GameObject.Find("/Environment");
         GameObject.Find("Player_Ship").transform.position = new Vector2(PlayerPrefs.GetFloat("X"), PlayerPrefs.GetFloat("Y"));
 
-        pressTab = environment.transform.Find("PressTab").gameObject;
+        pressTab = GameObject.Find("/Environment/SavePoints/PressTab").gameObject;
 
 
     }
