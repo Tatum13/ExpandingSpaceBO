@@ -15,6 +15,11 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void GoToComic()
+    {
+        SceneManager.LoadScene(6);
+    }
+
     public void Quitgame()
     {
         Debug.Log("quit");

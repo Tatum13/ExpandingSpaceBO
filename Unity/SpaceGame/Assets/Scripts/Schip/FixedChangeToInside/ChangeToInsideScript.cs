@@ -44,7 +44,7 @@ public class ChangeToInsideScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab) && change)
         {
             SaveLocation();
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
     }
 

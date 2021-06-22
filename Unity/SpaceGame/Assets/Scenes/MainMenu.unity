@@ -842,7 +842,6 @@ RectTransform:
   - {fileID: 484309768}
   - {fileID: 1585422016}
   - {fileID: 628464473}
-  - {fileID: 639657857}
   - {fileID: 653104374}
   m_Father: {fileID: 845180348}
   m_RootOrder: 0
@@ -2257,6 +2256,7 @@ RectTransform:
   - {fileID: 816166350}
   - {fileID: 88532993}
   - {fileID: 1419838633}
+  - {fileID: 639657857}
   m_Father: {fileID: 201051418}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2328,17 +2328,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639657856}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1387264616}
-  m_Father: {fileID: 201051418}
+  m_Father: {fileID: 628464473}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 830, y: -184}
+  m_AnchoredPosition: {x: 830, y: -223}
   m_SizeDelta: {x: 1625.4805, y: 1120.9092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &639657858
@@ -2408,7 +2408,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 201051418}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!328 &653104375
 VideoPlayer:
@@ -4241,7 +4241,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 201051419}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: GoToComic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

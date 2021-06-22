@@ -10,7 +10,6 @@ public class StartScript : MonoBehaviour
     {
         PlayerPrefs.SetFloat("X", -7.5f);
         PlayerPrefs.SetFloat("Y", -3.5f);
-        SceneManager.LoadScene(1);
     }
 
     // Update is called once per frame

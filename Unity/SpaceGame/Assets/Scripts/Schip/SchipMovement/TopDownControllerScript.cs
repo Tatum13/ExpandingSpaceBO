@@ -9,6 +9,9 @@ public class TopDownControllerScript : MonoBehaviour
     public float turnFactor = 1.5f;
     public float maxSpeed = 8;
 
+    public GameObject ship;
+    public float currentShipRotation;
+
     //Local variables
     float accelerationInput = 0;
     float steeringInput = 0;
@@ -32,6 +35,10 @@ public class TopDownControllerScript : MonoBehaviour
         ApplyEngineForce();
 
         ApplySteering();
+
+        currentShipRotation = ship.transform.localRotation.z;
+
+        Debug.Log(ship.transform.localRotation.eulerAngles.z);
     }
 
     void ApplyEngineForce()
