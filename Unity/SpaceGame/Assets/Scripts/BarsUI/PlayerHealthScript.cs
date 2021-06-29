@@ -19,15 +19,15 @@ public class PlayerHealthScript : MonoBehaviour
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-        else if(currentHealth < maxHealth)
-        {
-            currentHealth += 2f * Time.deltaTime;
-            healthBar.SetHealth(currentHealth);
-        }
+       //if (Input.GetKeyDown(KeyCode.Space))
+       //{
+       //    TakeDamage(20);
+       //}
+       // else if(currentHealth < maxHealth)
+       // {
+       //     currentHealth += 2f * Time.deltaTime;
+       //     healthBar.SetHealth(currentHealth);
+       // }
 
         if (currentHealth <= 0)
         {

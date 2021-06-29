@@ -37,8 +37,6 @@ public class TopDownControllerScript : MonoBehaviour
         ApplySteering();
 
         currentShipRotation = ship.transform.localRotation.z;
-
-        Debug.Log(ship.transform.localRotation.eulerAngles.z);
     }
 
     void ApplyEngineForce()

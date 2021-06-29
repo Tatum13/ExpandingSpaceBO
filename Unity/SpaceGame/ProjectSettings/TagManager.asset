@@ -10,11 +10,12 @@ TagManager:
   - Speed
   - Engine
   - charactertext
+  - Laser
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 

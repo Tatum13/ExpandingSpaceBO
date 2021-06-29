@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class StartScript : MonoBehaviour
 {
+    //public PauseMenuScript pause;
+
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetFloat("X", -7.5f);
-        PlayerPrefs.SetFloat("Y", -3.5f);
+       // pause = GetComponent<PauseMenuScript>();
+       // pause.Resume();
+        PlayerPrefs.SetFloat("X", -133.3f);
+        PlayerPrefs.SetFloat("Y", -8.4f);
     }
 
     // Update is called once per frame

@@ -8,7 +8,6 @@ public class PlayerEngineScript : MonoBehaviour
     public float currentHeat;
 
     public EngineBarScript engineBar;
-
     void Start()
     {
         currentHeat = maxHeat;
@@ -18,17 +17,17 @@ public class PlayerEngineScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButton(0))
         {
-            HighHeat(20);
+            HighHeat(0.05f);
         }
-        else if (currentHeat < maxHeat)
+        if (currentHeat < maxHeat)
         {
             currentHeat += 6f * Time.deltaTime;
             engineBar.SetHeat(currentHeat);
         }
 
-        else if (currentHeat <= 0)
+        if (currentHeat <= 0)
         {
             currentHeat += 4f * Time.deltaTime;
             engineBar.SetHeat(currentHeat);

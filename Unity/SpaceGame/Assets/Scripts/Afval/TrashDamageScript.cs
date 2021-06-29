@@ -9,10 +9,12 @@ public class TrashDamageScript : MonoBehaviour
     private GameObject bigStone;
     [SerializeField]
     private int objectHealth = 100;
+    public GameObject metal;
 
     // Start is called before the first frame update
     void Start()
     {
+        metal = GameObject.Find("/MetalStuff");
         animator = GetComponent<Animator>();
     }
     public void OnCollisionEnter2D(Collision2D other)
@@ -35,9 +37,16 @@ public class TrashDamageScript : MonoBehaviour
 
     private IEnumerator BoomStart()
     {
-        animator.SetTrigger("Boom");
-        yield return new WaitForSeconds(1);
+        animator.SetTrigger("SetBoom");
+        yield return new WaitForSeconds(1.5f);
+        ShowMetalParts();
         Destroy(this.gameObject);
+
     }
 
+    public void ShowMetalParts()
+    {
+        metal.SetActive(true);
+
+    }
 }

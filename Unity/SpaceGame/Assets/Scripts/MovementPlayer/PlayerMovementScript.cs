@@ -19,13 +19,6 @@ public class PlayerMovementScript : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-        }
-
-
     }
 
     void FixedUpdate()

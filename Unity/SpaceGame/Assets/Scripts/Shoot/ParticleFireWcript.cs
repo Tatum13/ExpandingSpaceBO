@@ -9,22 +9,18 @@ public class ParticleFireWcript : MonoBehaviour
     private ParticleSystem psLeft;
     private ParticleSystem psRight;
 
+    public PlayerEngineScript playerEngine;
+
     public GameObject cannonLeft;
     public GameObject cannonRight;
-
-    public GameObject player;
-    public TopDownControllerScript topdowncontrollerscript;
 
     // Start is called before the first frame update
     void Start()
     {
-        cannonLeft = GameObject.Find("CannonLeft");
-        cannonRight = GameObject.Find("CannonRight");
+        playerEngine = GetComponent<PlayerEngineScript>();
 
         psLeft = cannonLeft.GetComponent<ParticleSystem>();
         psRight = cannonRight.GetComponent<ParticleSystem>();
-
-        topdowncontrollerscript = player.GetComponent<TopDownControllerScript>();
     }
 
     // Update is called once per frame
@@ -35,9 +31,8 @@ public class ParticleFireWcript : MonoBehaviour
 
     void fireCannons()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && playerEngine.currentHeat >= 0)
         {
-
             psLeft.enableEmission = true;
             psRight.enableEmission = true;
         }
@@ -47,4 +42,5 @@ public class ParticleFireWcript : MonoBehaviour
             psRight.enableEmission = false;
         }
     }
+
 }
